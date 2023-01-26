@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+}
 .fa-solid,
 .fa-regular {
   font-size: 40px;
@@ -75,9 +78,9 @@ nav > *:hover,
   scale: 1;
 }
 #add-new-category {
+  justify-content: center;
   height: 60px;
   width: 150px;
-  font-size: 1.5rem;
   gap: 10px;
 }
 /*  */
