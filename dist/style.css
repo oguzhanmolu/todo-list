@@ -122,7 +122,7 @@ main {
   text-align: center;
 }
 #task-display-area > * {
-  margin: 25px 50px 0px 50px;
+  margin: 25px 100px 0px 100px;
   cursor: pointer;
   list-style: square;
 }
