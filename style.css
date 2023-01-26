@@ -6,12 +6,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  display: flex;
-}
+
 .fa-solid,
 .fa-regular {
-  font-size: 40px;
+  font-size: 30px;
+}
+.star-icon {
+  margin-left: -2px;
+}
+body {
+  display: flex;
 }
 
 /* Header */
@@ -25,14 +29,12 @@ header {
   background-color: var(--main-color);
 }
 #logo-group {
-  display: flex;
-  align-items: center;
   margin-top: 25px;
-  gap: 1rem;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   color: white;
+  background-color: transparent;
 }
-#logo {
+.big-logo {
   font-size: 55px;
 }
 nav {
@@ -52,54 +54,54 @@ nav > * {
   border-radius: 10px;
   background-color: white;
   color: var(--main-color);
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   cursor: pointer;
   transition: all ease-in-out 0.25s;
 }
-.star-icon {
-  margin-left: -4px;
-}
-#sum {
-  background-color: var(--main-color);
-  color: white;
-  font-size: 1.75rem;
-}
-#category-logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-#my-categories {
+#category-main {
   display: flex;
   flex-direction: column;
-  height: 450px;
-  width: 300px;
-  margin-top: 50px;
-  list-style-type: square;
-  cursor: default;
-}
-#my-categories > li {
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all ease-in-out 0.25s;
-}
-#add-new-category {
   justify-content: center;
-  height: 60px;
-  width: 150px;
+  align-items: center;
+  gap: 15px;
+}
+#category-logo-group {
+  font-size: 2rem;
+  color: white;
+}
+#category-li {
+  height: 400px;
+  width: 350px;
+  border-radius: 10px;
+  background-color: white;
+  color: var(--main-color);
+  list-style-type: square;
+  transition: all ease-in-out 0.25s;
+  text-align: center;
+  font-size: 1.75rem;
+}
+#category-li > * {
+  margin: 10px;
+  cursor: pointer;
+}
+#add-new-category-group {
+  justify-content: center;
+  padding: 15px;
   gap: 10px;
+  border-radius: 10px;
+  background-color: white;
+  color: var(--main-color);
+  transition: all ease-in-out 0.25s;
+  font-size: 1.5rem;
 }
-#my-categories:hover {
-  scale: 1;
-}
-#my-categories > li:hover {
-  scale: 1.25;
-}
-nav > *:hover {
-  scale: 1.1;
+nav > *:hover,
+#category-li > *:hover,
+#add-new-category-group:hover,
+#add-new-task-group:hover {
+  scale: 1.15;
 }
 
-/*  */
+/* Main */
 main {
   display: flex;
   flex-direction: column;
@@ -107,35 +109,36 @@ main {
   gap: 25px;
   width: 80vw;
 }
-#main-title {
-  font-size: 5rem;
-  margin-top: 50px;
+.main-title-group {
+  font-size: 3rem;
+  margin-top: 25px;
   color: var(--main-color);
+}
+.main-title-icon {
+  font-size: 50px;
 }
 #task-display-area {
-  height: 750px;
-  width: 1000px;
-  border-radius: 25px;
-  background-color: var(--main-color);
-  color: white;
-  font-size: 2rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 850px;
+  width: 1500px;
 }
-#task-display-area > * {
-  margin: 25px 100px 0px 100px;
-  cursor: pointer;
-  list-style: square;
-}
-#task-display-area > *:hover {
-  background-color: white;
-  color: var(--main-color);
-}
-#add-new-task {
-  padding: 20px;
+#add-new-task-group {
+  padding: 15px;
   border-radius: 10px;
-  border-style: none;
   background-color: var(--main-color);
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: all ease-in-out 0.25s;
+}
+
+#logo-group,
+#category-logo-group,
+.main-title-group,
+#add-new-category-group,
+#add-new-task-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
