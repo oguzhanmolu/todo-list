@@ -38,6 +38,10 @@
           <i class="fa-solid fa-star"></i>
           <p>Important</p>
         </div>
+        <div>
+          <i class="fa-solid fa-check"></i>
+          <p>Completed</p>
+        </div>
       </nav>
       <div id="category-main">
         <div id="category-logo-group">
@@ -45,26 +49,52 @@
           <p>Categories</p>
         </div>
         <div id="category-li">
-          <li>test</li>
+          <li>Test</li>
         </div>
       </div>
 
-      <div id="add-new-category-group">
-        <i class="fa-solid fa-square-plus"></i>
-        <p>Add</p>
       </div>
     </header>
 
     <main>
+    </div>
       <div class="main-title-group">
         <i class="fa-solid fa-clipboard-list main-title-icon"></i>
         <p>All Tasks</p>
       </div>
-      <div id="task-display-area"></div>
+      <div id="task-display-area">
+      </div>
       <div id="add-new-task-group">
         <i class="fa-solid fa-square-plus"></i>
         <p>Add Task</p>
       </div>
+      <!-- Modal -->
+      <div id="modal">
+        <div class="input-group title-group">
+          <label for="input-title">Title:</label>
+          <input type="text" id="input-title">
+        </div>
+  
+        <div class="input-group category-group">
+          <label for="input-category">Category:</label>
+          <input type="text" id="input-category">
+        </div>
+  
+        <div class="input-group date-group">
+          <label for="input-date">Due Date:</label>
+          <input type="text" id="input-date">
+        </div>
+  
+        <div class="input-group important-group">
+          <label for="input-important">Important:</label>
+          <input type="checkbox" id="input-important">
+        </div>
+        
+        <div class="input-group description-group">
+          <label for="description">Description:</label>
+          <textarea name="description" id="description" cols="30" rows="5"></textarea>
+        </div>
+        <button id="submit">Add</button>
     </main>
   </body>
 </html>
