@@ -71,30 +71,23 @@
       <!-- Modal -->
       <div id="modal">
         <div class="input-group title-group">
-          <label for="input-title">Title:</label>
-          <input type="text" id="input-title">
+          <input type="text" id="input-title" placeholder="Title">
+          <input type="text" id="input-category" placeholder="Category">
+          <div id="date-group">
+            <label for="input-date">Due:</label>
+            <input type="date" id="input-date">
+
+          </div>
+          <div id="important-group">
+            <label for="input-important">Important:</label>
+            <input type="checkbox" id="input-important">
+
+          </div>
+          <textarea name="description" id="description" cols="25" rows="4" placeholder="Description"></textarea>
+          <button id="submit">Add</button>
         </div>
   
-        <div class="input-group category-group">
-          <label for="input-category">Category:</label>
-          <input type="text" id="input-category">
-        </div>
-  
-        <div class="input-group date-group">
-          <label for="input-date">Due Date:</label>
-          <input type="text" id="input-date">
-        </div>
-  
-        <div class="input-group important-group">
-          <label for="input-important">Important:</label>
-          <input type="checkbox" id="input-important">
-        </div>
         
-        <div class="input-group description-group">
-          <label for="description">Description:</label>
-          <textarea name="description" id="description" cols="30" rows="5"></textarea>
-        </div>
-        <button id="submit">Add</button>
     </main>
   </body>
 </html>
