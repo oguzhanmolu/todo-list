@@ -19,7 +19,7 @@ header {
   flex-direction: column;
   height: 100vh;
   width: 20vw;
-  gap: 40px;
+  gap: 50px;
   background-color: var(--main-color);
 }
 
@@ -28,6 +28,19 @@ header {
   font-size: 2.5rem;
   color: white;
   background-color: transparent;
+}
+
+#nav-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 2rem;
+}
+#nav-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
@@ -66,7 +79,7 @@ nav > * {
 }
 
 #category-li {
-  height: 450px;
+  height: 400px;
   width: 300px;
   border-radius: 10px;
   background-color: white;
@@ -92,6 +105,7 @@ main {
   gap: 25px;
   width: 80vw;
 }
+
 .main-title-group {
   font-size: 3rem;
   margin-top: 25px;
@@ -104,6 +118,7 @@ main {
   height: 850px;
   width: 1500px;
 }
+
 #add-new-task-group {
   padding: 15px;
   border-radius: 10px;
@@ -115,12 +130,18 @@ main {
 
 #modal {
   position: fixed;
-  width: 225px;
-  height: 250px;
+  width: 250px;
+  height: 275px;
   border-radius: 10px;
   background-color: var(--main-color);
   color: white;
+  text-align: center;
 }
+
+#modal-title {
+  margin-top: 5px;
+}
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -132,13 +153,16 @@ main {
 #important-group {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
+
 #input-important {
   height: 20px;
   width: 20px;
 }
+
 #submit {
-  margin: 10px auto 0 auto;
+  margin: auto;
   padding: 5px;
   border-style: none;
   background-color: white;
@@ -156,6 +180,9 @@ main {
 .main-title-icon,
 .big-logo {
   font-size: 50px;
+}
+.fa-house {
+  font-size: 40px;
 }
 
 #logo-group,
