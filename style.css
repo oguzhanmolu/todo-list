@@ -65,7 +65,7 @@ nav > * {
   transition: all ease-in-out 0.25s;
 }
 
-#category-main {
+#project-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,12 +73,12 @@ nav > * {
   gap: 15px;
 }
 
-#category-logo-group {
+#project-logo-group {
   font-size: 2rem;
   color: white;
 }
 
-#category-li {
+#project-li {
   height: 400px;
   width: 300px;
   border-radius: 10px;
@@ -86,14 +86,12 @@ nav > * {
   color: var(--main-color);
   list-style-type: square;
   transition: all ease-in-out 0.25s;
-  text-align: center;
   font-size: 1.75rem;
 }
 
-#category-li > * {
-  margin: 10px 40px 0 40px;
-  background-color: var(--main-color);
-  color: white;
+#project-li > * {
+  margin: 10px 0 0 50px;
+  color: var(--main-color);
 }
 
 /* Main */
@@ -129,6 +127,7 @@ main {
 }
 
 #modal {
+  display: none;
   position: fixed;
   width: 250px;
   height: 275px;
@@ -139,7 +138,7 @@ main {
 }
 
 #modal-title {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .input-group {
@@ -161,7 +160,7 @@ main {
   width: 20px;
 }
 
-#submit {
+.add-button {
   margin: auto;
   padding: 5px;
   border-style: none;
@@ -186,7 +185,7 @@ main {
 }
 
 #logo-group,
-#category-logo-group,
+#project-logo-group,
 .main-title-group,
 #add-new-task-group {
   display: flex;
@@ -195,9 +194,9 @@ main {
 }
 
 nav > *:hover,
-#category-li > *:hover,
+#project-li > *:hover,
 #add-new-task-group:hover,
-#submit:hover {
+#submit-button:hover {
   cursor: pointer;
   scale: 1.15;
 }
