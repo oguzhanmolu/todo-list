@@ -1,4 +1,3 @@
-function test() {
-  console.log('test');
-}
-test();
+import controlDisplay from './modules/display';
+
+controlDisplay();

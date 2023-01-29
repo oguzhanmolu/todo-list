@@ -43,20 +43,19 @@
           <i class="fa-solid fa-star"></i>
           <p>Important</p>
         </div>
-        <div>
-          <i class="fa-solid fa-check"></i>
-          <p>Completed</p>
-        </div>
+        
       </nav>
     </div>
-      <div id="category-main">
-        <div id="category-logo-group">
+      <div id="project-main">
+        <div id="project-logo-group">
           <i class="fa-solid fa-list big-logo"></i>
-          <p>Categories</p>
+          <p>Projects</p>
         </div>
-        <div id="category-li">
+        <div id="project-li">
           <li>Test</li>
+          <li>Test2</li>
         </div>
+        <button class="add-button add-project">Add</button>
       </div>
 
       </div>
@@ -76,22 +75,27 @@
       </div>
       <!-- Modal -->
       <div id="modal">
-        <p id="modal-title">Add New Task</p>
+        <form id="form" action="#">
+        <span id="modal-title">Add New Task</span>
+
         <div class="input-group title-group">
           <input type="text" id="input-title" placeholder="Title">
-          <input type="text" id="input-category" placeholder="Category">
+
           <div id="date-group">
             <label for="input-date">Due:</label>
             <input type="date" id="input-date">
 
           </div>
+
           <div id="important-group">
             <label for="input-important">Important:</label>
             <input type="checkbox" id="input-important">
-
           </div>
-          <textarea name="description" id="description" cols="25" rows="4" placeholder="Description"></textarea>
-          <button id="submit">Add</button>
+
+          <textarea name="description" id="input-description" cols="25" rows="4" placeholder="Description"></textarea>
+          
+          <button type="submit" class="add-button submit-button">Add</button>
+          </form>
         </div>
   
         
