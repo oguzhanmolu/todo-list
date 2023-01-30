@@ -1,4 +1,3 @@
-import createTask from './createTask';
 // Variables
 const modal = document.getElementById('modal');
 const modalInputForm = document.getElementById('form');
@@ -15,7 +14,6 @@ function toggleModal() {
   btnModalSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     modal.style.display = 'none';
-    createTask();
   });
 }
 

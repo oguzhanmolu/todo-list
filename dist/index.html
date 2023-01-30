@@ -16,7 +16,7 @@
     <header>
       <div id="logo-group">
         <i class="fa-solid fa-note-sticky big-logo"></i>
-        <p>// To-Do List</p>
+        <span class="bold-text">// To-Do List</span>
       </div>
       <div id="nav-group">
       <div id="nav-title-group">
@@ -49,13 +49,18 @@
       <div id="project-main">
         <div id="project-logo-group">
           <i class="fa-solid fa-list big-logo"></i>
-          <p>Projects</p>
+          <span class="bold-text">Projects</span>
+          
+          <button id="add-new-project">
+            <i class="fa-solid fa-square-plus"></i>
+          </button>
         </div>
-        <div id="project-li">
+        
+        <div id="project-li-group">
           <li>Test</li>
           <li>Test2</li>
+          
         </div>
-        <button class="add-button add-project">Add</button>
       </div>
 
       </div>
@@ -78,13 +83,12 @@
         <form id="form" action="#">
         <span id="modal-title">Add New Task</span>
 
-        <div class="input-group title-group">
+        <div class="input-group">
           <input type="text" id="input-title" placeholder="Title">
-
+          <input type="text" id="input-project" placeholder="Project">
           <div id="date-group">
             <label for="input-date">Due:</label>
             <input type="date" id="input-date">
-
           </div>
 
           <div id="important-group">
@@ -97,6 +101,7 @@
           <button type="submit" class="add-button submit-button">Add</button>
           </form>
         </div>
+      </div>
   
         
     </main>
