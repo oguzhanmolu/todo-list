@@ -44,23 +44,21 @@ header {
 }
 
 nav {
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
 }
 
 nav > * {
-  display: flex;
-  align-items: center;
   width: 225px;
-  margin-top: 15px;
-  border-radius: 10px;
+  height: 50px;
+  margin-top: 20px;
   background-color: white;
   color: var(--main-color);
   font-size: 1.65rem;
   transition: all ease-in-out 0.25s;
+}
+.nav-ele-group > * {
+  margin-left: 10px;
 }
 
 #project-main {
@@ -147,7 +145,6 @@ textarea {
 }
 textarea {
   height: 90px;
-  width: 325px;
 }
 #input-important {
   height: 25px;
@@ -182,6 +179,8 @@ textarea {
 #project-logo-group,
 .main-title-group,
 #add-new-task-group,
+nav,
+nav > *,
 #add-new-project,
 .input-main-group,
 #important-group,
@@ -193,8 +192,7 @@ textarea {
 
 nav > *:hover,
 #add-new-task-group:hover,
-#submit-button:hover,
-#add-new-project:hover {
+#submit-button:hover {
   cursor: pointer;
   scale: 1.15;
 }
