@@ -56,8 +56,6 @@ nav > * {
   align-items: center;
   width: 225px;
   margin-top: 15px;
-  padding: 10px;
-  gap: 20px;
   border-radius: 10px;
   background-color: white;
   color: var(--main-color);
@@ -70,7 +68,6 @@ nav > * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
 }
 
 #project-logo-group {
@@ -81,6 +78,7 @@ nav > * {
 #project-li-group {
   height: 400px;
   width: 300px;
+  margin-top: 10px;
   border-radius: 10px;
   background-color: white;
   color: var(--main-color);
@@ -95,11 +93,6 @@ nav > * {
   cursor: pointer;
 }
 
-#add-new-project {
-  padding: 5px;
-  color: var(--main-color);
-  font-size: 1.25rem;
-}
 /* Main */
 main {
   display: flex;
@@ -135,34 +128,30 @@ main {
 #modal {
   display: none;
   position: fixed;
-  width: 250px;
-  height: 275px;
+  width: 350px;
+  height: 350px;
   border-radius: 10px;
   background-color: var(--main-color);
   color: white;
   text-align: center;
+  font-size: 1.5rem;
 }
-
-#modal-title {
-  margin-top: 10px;
-}
-.input-group {
-  display: flex;
+.input-main-group {
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
-  gap: 10px;
 }
-#important-group {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+input,
+textarea {
+  height: 30px;
+  font-size: 1.15rem;
 }
-
+textarea {
+  height: 90px;
+  width: 325px;
+}
 #input-important {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
 .add-button {
@@ -193,7 +182,10 @@ main {
 #project-logo-group,
 .main-title-group,
 #add-new-task-group,
-#add-new-project {
+#add-new-project,
+.input-main-group,
+#important-group,
+#input-group {
   display: flex;
   align-items: center;
   gap: 10px;
