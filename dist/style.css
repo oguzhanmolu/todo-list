@@ -37,7 +37,7 @@ header {
   color: white;
   font-size: 2rem;
 }
-#nav-group {
+#nav-main-group {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,21 +51,22 @@ nav {
 nav > * {
   width: 225px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: white;
   color: var(--main-color);
   font-size: 1.65rem;
   transition: all ease-in-out 0.25s;
 }
-.nav-ele-group > * {
+nav > * > * {
   margin-left: 10px;
 }
 
-#project-main {
+/* Project section */
+#project-main-group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 #project-logo-group {
@@ -74,7 +75,6 @@ nav > * {
 }
 
 #project-li-group {
-  height: 400px;
   width: 300px;
   margin-top: 10px;
   border-radius: 10px;
@@ -97,19 +97,16 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
   width: 80vw;
 }
 
+/* Title */
 .main-title-group {
   font-size: 3rem;
-  margin-top: 25px;
   color: var(--main-color);
 }
 
 #task-display-area {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   height: 850px;
   width: 1500px;
 }
@@ -126,13 +123,16 @@ main {
 #modal {
   display: none;
   position: fixed;
-  width: 350px;
-  height: 350px;
+  width: 325px;
+  height: 290px;
   border-radius: 10px;
   background-color: var(--main-color);
   color: white;
   text-align: center;
   font-size: 1.5rem;
+}
+#modal > * {
+  margin-top: 10px;
 }
 .input-main-group {
   flex-direction: column;
@@ -140,18 +140,14 @@ main {
 }
 input,
 textarea {
-  height: 30px;
+  height: 40px;
   font-size: 1.15rem;
 }
 textarea {
-  height: 90px;
-}
-#input-important {
-  height: 25px;
-  width: 25px;
+  height: 125px;
 }
 
-.add-button {
+#submit-button {
   margin: auto;
   padding: 10px;
   border-style: none;
@@ -176,15 +172,13 @@ textarea {
 }
 
 #logo-group,
+nav,
+nav > *,
 #project-logo-group,
 .main-title-group,
 #add-new-task-group,
-nav,
-nav > *,
-#add-new-project,
 .input-main-group,
-#important-group,
-#input-group {
+#input-date-group {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -195,7 +189,4 @@ nav > *:hover,
 #submit-button:hover {
   cursor: pointer;
   scale: 1.15;
-}
-.bold-text {
-  font-weight: bold;
 }

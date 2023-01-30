@@ -13,93 +13,83 @@
     ></script>
   </head>
   <body>
+    <!-- Header -->
     <header>
       <div id="logo-group">
         <i class="fa-solid fa-note-sticky big-logo"></i>
-        <span class="bold-text">// To-Do List</span>
+        <span>// To-Do List</span>
       </div>
-      <div id="nav-group">
+      <!-- Nav -->
+      <div id="nav-main-group">
       <div id="nav-title-group">
         <i class="fa-solid fa-house"></i>
         <span id="nav-title">Home</span>
       </div>
+
       <nav>
-        <div class="nav-ele-group">
+        <div >
           <i class="fa-solid fa-clipboard-list"></i>
           <p>All Tasks</p>
         </div>
 
-        <div class="nav-ele-group">
+        <div >
           <i class="fa-solid fa-calendar-day"></i>
           <p>Today</p>
         </div>
 
-        <div class="nav-ele-group">
+        <div >
           <i class="fa-regular fa-calendar-days"></i>
           <p>Upcoming</p>
         </div>
-
-        <div class="nav-ele-group">
-          <i class="fa-solid fa-star"></i>
-          <p>Important</p>
-        </div>
-        
       </nav>
+      
     </div>
-      <div id="project-main">
+      <div id="project-main-group">
         <div id="project-logo-group">
           <i class="fa-solid fa-list big-logo"></i>
-          <span class="bold-text">Projects</span>
+          <span>Projects</span>
         </div>
         
         <div id="project-li-group">
           <li>Test</li>
-          <li>Test2</li>
         </div>
       </div>
       </div>
     </header>
 
+    <!-- Main -->
     <main>
     </div>
       <div class="main-title-group">
         <i class="fa-solid fa-clipboard-list main-title-icon"></i>
         <p>All Tasks</p>
       </div>
-      <div id="task-display-area">
-      </div>
+
+      <div id="task-display-area"></div>
+
       <div id="add-new-task-group">
         <i class="fa-solid fa-square-plus"></i>
         <p>Add Task</p>
       </div>
+
       <!-- Modal -->
       <div id="modal">
         <form id="form" action="#">
-        <span id="modal-title">Add New Task</span>
+        <span>Add New Task</span>
 
         <div class="input-main-group">
-          <input type="text" id="input-title" placeholder="Title">
+          <textarea name="description" id="input-description" cols="25" rows="4" placeholder="Description"></textarea>
 
-          <input type="text" id="input-project" placeholder="Project">
-
-          <div id="input-group">
-            <label for="input-date">Due:</label>
+          <div id="input-date-group">
+            <label for="input-date">Deadline:</label>
             <input type="date" id="input-date">
           </div>
 
-          <div id="input-group">
-            <label for="input-important">Important:</label>
-            <input type="checkbox" id="input-important">
-          </div>
-
-          <textarea name="description" id="input-description" cols="25" rows="4" placeholder="Description"></textarea>
           
-          <button type="submit" class="add-button submit-button">Add</button>
+          <button type="submit" id="submit-button">Add</button>
           </form>
         </div>
       </div>
-  
-        
     </main>
   </body>
 </html>
