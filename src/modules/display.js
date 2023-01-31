@@ -1,8 +1,10 @@
+import Storage from './modules/storage';
+
 // Variables
 const modal = document.getElementById('modal');
 const modalInputForm = document.getElementById('form');
 const btnAddTask = document.getElementById('add-new-task-group');
-const btnModalSubmit = document.querySelector('.submit-button');
+const btnModalSubmit = document.querySelector('#submit-button');
 
 // Toggle modal on/off when add button is clicked
 function toggleModal() {
