@@ -1,10 +1,9 @@
 import Task from './task';
 export default class Storage {
-  saveTask() {
-    localStorage.setItem('taskObject', JSON.stringify(new Task()));
+  static saveTask() {
+    console.log('save');
   }
-  getItem() {
-    let taskObject = localStorage.getItem(JSON.parse('taskObject'));
-    console.log(taskObject);
+  static loadTask() {
+    console.log('get');
   }
 }

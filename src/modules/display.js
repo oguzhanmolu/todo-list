@@ -1,4 +1,4 @@
-import Storage from './modules/storage';
+import Storage from './storage';
 
 // Variables
 const modal = document.getElementById('modal');
