@@ -1,3 +1,4 @@
+import Task from './task';
 import Storage from './storage';
 
 // Variables
@@ -16,6 +17,7 @@ function toggleModal() {
   btnModalSubmit.addEventListener('click', (e) => {
     e.preventDefault();
     modal.style.display = 'none';
+    Storage.storeTaskObject(Task.createTaskObject());
   });
 }
 
@@ -23,6 +25,7 @@ function toggleModal() {
 function resetModal() {
   btnAddTask.addEventListener('click', () => {
     modalInputForm.reset();
+    Storage.getTaskArray();
   });
 }
 

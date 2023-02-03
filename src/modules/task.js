@@ -4,4 +4,14 @@ export default class Task {
     this.description = description;
     this.deadline = deadline;
   }
+
+  // Create a new object with input values
+  static createTaskObject = () => {
+    // Input values
+    const modalInputTitle = document.getElementById('input-title').value;
+    const modalInputDescription =
+      document.getElementById('input-description').value;
+    const modalInputDate = document.getElementById('input-date').value;
+    return new Task(modalInputTitle, modalInputDescription, modalInputDate);
+  };
 }

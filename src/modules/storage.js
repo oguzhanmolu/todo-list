@@ -1,9 +1,14 @@
-import Task from './task';
+let taskArray = [];
 export default class Storage {
-  static saveTask() {
-    console.log('save');
+  // Push newly created task objects into empty array,
+  // then localStore the array for later uses
+  static storeTaskObject(data) {
+    taskArray.push(data);
+    localStorage.setItem('arr', JSON.stringify(taskArray));
   }
-  static loadTask() {
-    console.log('get');
+
+  // Get the task array
+  static getTaskArray() {
+    console.log(JSON.parse(localStorage.getItem('arr')));
   }
 }
