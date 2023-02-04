@@ -25,7 +25,7 @@ header {
 
 #logo-group {
   margin-top: 25px;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: white;
   background-color: transparent;
 }
@@ -35,7 +35,7 @@ header {
   align-items: center;
   gap: 10px;
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 #nav-main-group {
   display: flex;
@@ -49,46 +49,16 @@ nav {
 }
 
 nav > * {
-  width: 225px;
-  height: 50px;
+  width: 250px;
+  height: 75px;
   margin-top: 15px;
   background-color: white;
   color: var(--main-color);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   transition: all ease-in-out 0.25s;
 }
 nav > * > * {
   margin-left: 10px;
-}
-
-/* Project section */
-#project-main-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#project-logo-group {
-  font-size: 2rem;
-  color: white;
-}
-
-#project-li-group {
-  width: 300px;
-  margin-top: 10px;
-  border-radius: 10px;
-  background-color: white;
-  color: var(--main-color);
-  list-style-type: none;
-  transition: all ease-in-out 0.25s;
-  font-size: 1.75rem;
-}
-
-#project-li-group > * {
-  margin: 10px 0 0 25px;
-  color: var(--main-color);
-  cursor: pointer;
 }
 
 /* Main */
@@ -101,7 +71,7 @@ main {
 }
 
 /* Title */
-.main-title-group {
+#main-title {
   font-size: 3rem;
   color: var(--main-color);
 }
@@ -175,7 +145,6 @@ textarea {
 #logo-group,
 nav,
 nav > *,
-#project-logo-group,
 .main-title-group,
 #add-new-task-group,
 .input-main-group,
