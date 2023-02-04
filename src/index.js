@@ -1,2 +1,1 @@
-import controlDisplay from './modules/display';
-controlDisplay();
+import UI from './modules/UI';
