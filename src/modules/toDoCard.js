@@ -16,9 +16,12 @@ export default class ToDoCard {
       Storage.tasks.forEach((task) => {
         const card = document.createElement('div');
         card.innerHTML = `
-        <span>${task.title}</span>
-        <span>${task.description}</span>
-        <span>${task.deadline}</span>`;
+        <div id="card">
+          <i class="card-icon fa-sharp fa-solid fa-check-double"></i>
+          <span class="card-item card-title">Title: ${task.title}</span>
+          <span class="card-item card-description">Description: ${task.description}</span>
+          <span class="card-item card-deadline">Deadline: ${task.deadline}</span>
+          </div>`;
         taskDisplayArea.appendChild(card);
       });
     });

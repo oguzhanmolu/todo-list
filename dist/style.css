@@ -67,6 +67,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 25px;
   width: 80vw;
 }
 
@@ -77,8 +78,11 @@ main {
 }
 
 #task-display-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
   height: 850px;
-  width: 1500px;
+  width: 1475px;
+  gap: 25px;
 }
 
 #add-new-task-group {
@@ -126,6 +130,27 @@ textarea {
   color: var(--main-color);
   font-size: 1.25rem;
   transition: all ease-in-out 0.25s;
+}
+
+/* To do cards */
+#card {
+  height: 300px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.card-icon {
+  margin-top: 10px;
+}
+.card-item {
+  display: block;
+  margin-top: 25px;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+.card-title {
+  font-size: 1.75rem;
 }
 
 /* Logo, hover, icons etc. */
