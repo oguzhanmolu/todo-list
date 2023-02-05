@@ -7,7 +7,7 @@ export default class Task {
 
   // Create a new object with input values
   static createTaskObject() {
-    // Input values
+    // Modal input values
     const modalInputTitle = document.getElementById('input-title').value;
     const modalInputDescription =
       document.getElementById('input-description').value;

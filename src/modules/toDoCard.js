@@ -11,11 +11,14 @@ export default class ToDoCard {
 
     selectionAllTasks.addEventListener('click', () => {
       mainTitle.textContent = 'All Tasks';
+      if (!Storage.tasks) return;
+
       Storage.tasks.forEach((task) => {
         const card = document.createElement('div');
-        card.innerHTML = `<span>${task.title}</span>
-                          <span>${task.description}</span>
-                          <span>${task.deadline}</span>`;
+        card.innerHTML = `
+        <span>${task.title}</span>
+        <span>${task.description}</span>
+        <span>${task.deadline}</span>`;
         taskDisplayArea.appendChild(card);
       });
     });

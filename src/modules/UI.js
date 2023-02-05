@@ -7,14 +7,14 @@ export default class UI {
   static toggleModal() {
     const modal = document.getElementById('modal');
     const btnAddTask = document.getElementById('add-new-task-group');
-    const btnModalSubmit = document.querySelector('#submit-button');
+    const form = document.getElementById('form');
 
     // On
     btnAddTask.addEventListener('click', () => {
       modal.style.display = 'block';
     });
     // Off
-    btnModalSubmit.addEventListener('click', (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       modal.style.display = 'none';
     });
@@ -32,9 +32,7 @@ export default class UI {
 
   // Create new task object, then store it in array
   static createTaskObject() {
-    const btnModalSubmit = document.querySelector('#submit-button');
-
-    btnModalSubmit.addEventListener('click', () =>
+    form.addEventListener('submit', () =>
       Storage.storeTaskObject(Task.createTaskObject())
     );
   }
