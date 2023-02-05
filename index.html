@@ -66,16 +66,16 @@
         <span>Add New Task</span>
 
         <div class="input-main-group">
-          <input type="text" id="input-title" placeholder="Title">
+          <input required type="text" id="input-title" placeholder="*Title">
 
-          <textarea name="description" id="input-description" cols="25" rows="4" placeholder="Description"></textarea>
+          <textarea required name="description" id="input-description" cols="25" rows="4" placeholder="*Description"></textarea>
 
           <div id="input-date-group">
-            <label for="input-date">Due:</label>
-            <input type="date" id="input-date">
+            <label for="input-date">*Due:</label>
+            <input required type="date" id="input-date">
           </div>
 
-          <button type="submit" id="submit-button">Add</button>
+          <button id="submit-button" >Add</button>
           </form>
         </div>
       </div>
