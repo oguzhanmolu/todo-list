@@ -7,38 +7,45 @@ export default class UI {
   static toggleModal() {
     const modal = document.getElementById('modal');
     const btnAddTask = document.getElementById('add-new-task-group');
-    const form = document.getElementById('form');
+    const modalInputForm = document.getElementById('form');
+    const header = document.getElementById('header');
 
     // On
     btnAddTask.addEventListener('click', () => {
       modal.style.display = 'block';
+      header.style.filter = 'blur(1px)';
     });
     // Off
-    form.addEventListener('submit', (e) => {
+    modalInputForm.addEventListener('submit', (e) => {
       e.preventDefault();
       modal.style.display = 'none';
+      header.style.filter = 'blur(0px)';
     });
   }
 
   // Reset modal input
   static resetModal() {
-    const btnAddTask = document.getElementById('add-new-task-group');
     const modalInputForm = document.getElementById('form');
+    const btnAddTask = document.getElementById('add-new-task-group');
+
     btnAddTask.addEventListener('click', () => {
       modalInputForm.reset();
-      Storage.getTaskArray();
     });
   }
 
   // Create new task object, then store it in array
   static createTaskObject() {
-    form.addEventListener('submit', () =>
+    const modalInputForm = document.getElementById('form');
+
+    modalInputForm.addEventListener('submit', () =>
       Storage.storeTaskObject(Task.createTaskObject())
     );
   }
   // Create toDoCards from task objects
   static createToDoCard() {
-    ToDoCard.createTaskCards();
+    ToDoCard.createAllTaskCards();
+    ToDoCard.createTodayTaskCards();
+    ToDoCard.createUpcomingTaskCards();
   }
 }
 

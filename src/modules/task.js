@@ -15,4 +15,14 @@ export default class Task {
 
     return new Task(modalInputTitle, modalInputDescription, modalInputDate);
   }
+
+  // Get today's fullDate in same format as 'task.deadline' (day-month-year)
+  static getFullDate() {
+    const date = new Date();
+    const day = new Date().getDate();
+    const todayFullDate = `${date.getFullYear()}-0${date.getMonth() + 1}-${
+      day < 10 ? '0' + day : day
+    }`;
+    return todayFullDate;
+  }
 }
