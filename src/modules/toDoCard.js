@@ -4,23 +4,21 @@ import Task from './task';
 // Create ToDoCards when navbar is clicked,
 // then add those cards into task display area
 export default class ToDoCard {
-  // Create all of the task cards
   static createAllTaskCards() {
     const mainTitle = document.getElementById('main-title');
     const taskDisplayArea = document.getElementById('task-display-area');
     const selectionAllTasks = document.getElementById('all-tasks');
 
-    // Events when all tasks is clicked
+    // Events when button is clicked
     selectionAllTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = 'All Tasks';
       if (!Storage.tasks) return;
 
-      // Creating task cards as innerHTML, then appending it on main display area
+      // Creating task cards, then appending it on main display area
       Storage.tasks.forEach((task) => {
         const card = document.createElement('div');
 
-        // All To-do cards
         card.innerHTML = `
         <div id="card">
           <i class="card-icon fa-sharp fa-solid fa-check-double"></i>
@@ -44,6 +42,7 @@ export default class ToDoCard {
     const taskDisplayArea = document.getElementById('task-display-area');
     const selectionTodayTasks = document.getElementById('today-tasks');
 
+    // Events when button is clicked
     selectionTodayTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = `Today's Tasks`;
@@ -55,7 +54,7 @@ export default class ToDoCard {
         if (task.deadline === Task.getFullDate()) {
           const card = document.createElement('div');
 
-          // Today's To-do cards
+          // innerHTML
           card.innerHTML = `
           <div id="card">
             <i class="card-icon fa-sharp fa-solid fa-check-double"></i>
@@ -68,19 +67,21 @@ export default class ToDoCard {
       });
     });
   }
+
   // Tasks from upcoming 7 days
   static createUpcomingTaskCards() {
     const mainTitle = document.getElementById('main-title');
     const taskDisplayArea = document.getElementById('task-display-area');
     const selectionUpcomingTasks = document.getElementById('upcoming-tasks');
 
+    // Events when button is clicked
     selectionUpcomingTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = 'Upcoming Tasks';
       if (!Storage.tasks) return;
 
       Storage.tasks.forEach((task) => {
-        // If task is in this month and, task's date minus today's date is smaller or equals than 7
+        // If task is in this month and, task's deadline minus today's date is smaller or equals than 7
         // We create a new card from that task
         if (
           task.deadline.split('-')[1] === Task.getFullDate().split('-')[1] &&
@@ -88,7 +89,7 @@ export default class ToDoCard {
         ) {
           const card = document.createElement('div');
 
-          // All To-do cards
+          // innerHTML
           card.innerHTML = `
           <div id="card">
             <i class="card-icon fa-sharp fa-solid fa-check-double"></i>

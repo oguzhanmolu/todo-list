@@ -3,6 +3,7 @@ export default class Storage {
   constructor() {
     this.tasks = [];
   }
+
   // Push newly created task objects into empty array,
   // then localStore the array for later uses
   static storeTaskObject(object) {
@@ -13,6 +14,6 @@ export default class Storage {
 
   // Get the task array
   static getTaskArray() {
-    console.log(JSON.parse(localStorage.getItem('taskArray')));
+    return JSON.parse(localStorage.getItem('taskArray'));
   }
 }
