@@ -30,10 +30,10 @@ export default class ToDoCard {
     selectionAllTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = 'All Tasks';
-      if (!Storage.tasks) return;
+      if (!Storage.getTaskArray()) return;
 
       // Creating task cards, then appending it on main display area
-      Storage.tasks.forEach((task) =>
+      Storage.getTaskArray().forEach((task) =>
         this.createCardInnerHTML(task.title, task.description, task.deadline)
       );
     });
@@ -50,11 +50,11 @@ export default class ToDoCard {
     selectionTodayTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = `Today's Tasks`;
-      if (!Storage.tasks) return;
+      if (!Storage.getTaskArray()) return;
 
       // Compare today's date and task.deadline,
       // If there is a match, create a To-Do card
-      Storage.tasks.forEach((task) => {
+      Storage.getTaskArray().forEach((task) => {
         if (task.deadline === Task.getFullDate())
           this.createCardInnerHTML(task.title, task.description, task.deadline);
       });
@@ -71,11 +71,11 @@ export default class ToDoCard {
     selectionUpcomingTasks.addEventListener('click', () => {
       taskDisplayArea.textContent = '';
       mainTitle.textContent = 'Upcoming Tasks';
-      if (!Storage.tasks) return;
+      if (!Storage.getTaskArray()) return;
 
-      Storage.tasks.forEach((task) => {
+      Storage.getTaskArray().forEach((task) => {
         // If task is in this month and, task's deadline minus today's date is smaller or equals than 7
-        // We create a new card from that task
+        // We create a new card from that task ([1] index is month,[2] is day )
         const taskDeadline = task.deadline.split('-');
         const todayFullDate = Task.getFullDate().split('-');
 
