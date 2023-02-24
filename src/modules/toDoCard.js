@@ -76,9 +76,12 @@ export default class ToDoCard {
       Storage.tasks.forEach((task) => {
         // If task is in this month and, task's deadline minus today's date is smaller or equals than 7
         // We create a new card from that task
+        const taskDeadline = task.deadline.split('-');
+        const todayFullDate = Task.getFullDate().split('-');
+
         if (
-          task.deadline.split('-')[1] === Task.getFullDate().split('-')[1] &&
-          task.deadline.split('-')[2] - Task.getFullDate().split('-')[2] <= 7
+          taskDeadline[1] === todayFullDate[1] &&
+          taskDeadline[2] - todayFullDate[2] <= 7
         )
           this.createCardInnerHTML(task.title, task.description, task.deadline);
       });

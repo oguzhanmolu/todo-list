@@ -13,6 +13,19 @@ export default class Task {
       document.getElementById('input-description').value;
     const modalInputDate = document.getElementById('input-date').value;
 
+    // Check task.deadline is at least due today before creating a new task object
+    // I know it is kinda hard to read, but date format is year-month-day
+    //  and I split it into array,then use it with its index instead of creating 6 new variables
+    const todayFullDate = Task.getFullDate().split('-');
+    const inputFullDate = modalInputDate.split('-');
+
+    if (
+      todayFullDate[0] === inputFullDate[0] &&
+      todayFullDate[1] === inputFullDate[1] &&
+      todayFullDate[2] > inputFullDate[2]
+    )
+      return alert('Deadline must be at least due today.');
+
     return new Task(modalInputTitle, modalInputDescription, modalInputDate);
   }
 
