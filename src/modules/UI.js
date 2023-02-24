@@ -20,7 +20,7 @@ export default class UI {
       e.preventDefault();
       modal.style.display = 'none';
       header.style.filter = 'blur(0px)';
-      console.log(Storage.getTaskArray());
+      ToDoCard.createAllTaskCards();
     });
   }
 
