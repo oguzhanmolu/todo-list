@@ -27,7 +27,6 @@ export default class UI {
     // Various modal off scenarios
     modalInputForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      ToDoCard.createAllTaskCards();
       hideModal();
     });
     // When mouseover on header
@@ -35,7 +34,7 @@ export default class UI {
 
     // When keydown===esc key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' || e.key === 'Enter') hideModal();
+      if (e.key === 'Escape') hideModal();
     });
   }
 
@@ -53,10 +52,12 @@ export default class UI {
   static createTaskObject() {
     const modalInputForm = document.getElementById('form');
 
-    modalInputForm.addEventListener('submit', () =>
-      Storage.storeTaskObject(Task.createTaskObject())
-    );
+    modalInputForm.addEventListener('submit', () => {
+      Storage.storeTaskObject(Task.createTaskObject());
+      ToDoCard.createTaskCard();
+    });
   }
+
   // Create toDoCards from task objects
   static createToDoCard() {
     ToDoCard.createAllTaskCards();

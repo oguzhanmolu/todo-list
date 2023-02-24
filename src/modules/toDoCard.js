@@ -19,24 +19,35 @@ export default class ToDoCard {
     taskDisplayArea.appendChild(card);
   }
 
-  // Create ToDoCards when navbar is clicked,
-  // then add those cards into task display area
-  static createAllTaskCards() {
-    const mainTitle = document.getElementById('main-title');
+  // Create task object with 'createCardInnerHTML' function
+  static createTaskCard = () => {
     const taskDisplayArea = document.getElementById('task-display-area');
-    const selectionAllTasks = document.getElementById('all-tasks');
     taskDisplayArea.textContent = '';
-    mainTitle.textContent = 'All Tasks';
-    if (!Storage.getTaskArray()) return;
-
-    // Creating task cards, then appending it on main display area
     Storage.getTaskArray().forEach((task) =>
       this.createCardInnerHTML(task.title, task.description, task.deadline)
     );
+  };
 
-    // Events when all tasks button is clicked
-    selectionAllTasks.addEventListener('click', () => {
-      this.createAllTaskCards();
+  // Create ToDoCards when navbar is clicked,
+  // then add those cards into task display area
+  static createAllTaskCards() {
+    if (!Storage.getTaskArray || Storage.getTaskArray() === null) return;
+
+    const taskDisplayArea = document.getElementById('task-display-area');
+    const selectionAllTasks = document.getElementById('all-tasks');
+    taskDisplayArea.textContent = '';
+
+    // Create task cards, then append it on main display area on first page load
+    this.createTaskCard();
+
+    // Create all task objects when all tasks button is clicked
+    selectionAllTasks.addEventListener('click', (e) => {
+      e.preventDefault();
+      const mainTitle = document.getElementById('main-title');
+      mainTitle.textContent = 'All Tasks';
+      taskDisplayArea.textContent = '';
+
+      Storage.getTaskArray().forEach(() => this.createTaskCard());
     });
   }
 

@@ -95,7 +95,7 @@ main {
 }
 
 #modal {
-  display: block;
+  display: none;
   position: fixed;
   margin: 350px 0 0 1000px;
   z-index: 1;
