@@ -100,8 +100,7 @@ main {
   width: 300px;
   height: 350px;
   border-radius: 10px;
-  background-color: var(--main-color);
-  border: 2px solid white;
+  background-color: rgb(213, 101, 101);
   color: white;
   text-align: center;
   font-size: 1.5rem;
@@ -127,8 +126,6 @@ textarea {
   margin: auto;
   padding: 10px;
   border-style: none;
-  background-color: white;
-  color: var(--main-color);
   font-size: 1.25rem;
   transition: all ease-in-out 0.25s;
 }

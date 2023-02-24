@@ -25,17 +25,18 @@ export default class ToDoCard {
     const mainTitle = document.getElementById('main-title');
     const taskDisplayArea = document.getElementById('task-display-area');
     const selectionAllTasks = document.getElementById('all-tasks');
+    taskDisplayArea.textContent = '';
+    mainTitle.textContent = 'All Tasks';
+    if (!Storage.getTaskArray()) return;
+
+    // Creating task cards, then appending it on main display area
+    Storage.getTaskArray().forEach((task) =>
+      this.createCardInnerHTML(task.title, task.description, task.deadline)
+    );
 
     // Events when all tasks button is clicked
     selectionAllTasks.addEventListener('click', () => {
-      taskDisplayArea.textContent = '';
-      mainTitle.textContent = 'All Tasks';
-      if (!Storage.getTaskArray()) return;
-
-      // Creating task cards, then appending it on main display area
-      Storage.getTaskArray().forEach((task) =>
-        this.createCardInnerHTML(task.title, task.description, task.deadline)
-      );
+      this.createAllTaskCards();
     });
   }
 

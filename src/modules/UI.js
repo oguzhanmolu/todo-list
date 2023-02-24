@@ -10,17 +10,29 @@ export default class UI {
     const modalInputForm = document.getElementById('form');
     const header = document.getElementById('header');
 
+    function hideModal() {
+      modal.style.display = 'none';
+      header.style.filter = 'blur(0px)';
+    }
+
     // On
     btnAddTask.addEventListener('click', () => {
       modal.style.display = 'block';
       header.style.filter = 'blur(1px)';
     });
-    // Off
+
+    // Various modal off scenarios
     modalInputForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      modal.style.display = 'none';
-      header.style.filter = 'blur(0px)';
       ToDoCard.createAllTaskCards();
+      hideModal();
+    });
+    // When mouseover on header
+    header.addEventListener('mouseover', () => hideModal());
+
+    // When keydown===esc key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hideModal();
     });
   }
 
