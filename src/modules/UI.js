@@ -52,21 +52,18 @@ export default class UI {
   static createTaskObject() {
     const modalInputForm = document.getElementById('form');
 
-    modalInputForm.addEventListener('submit', () => {
+    modalInputForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       Storage.storeTaskObject(Task.createTaskObject());
-      ToDoCard.createTaskCard();
     });
   }
 
   // Create toDoCards from task objects
   static createToDoCard() {
+    ToDoCard.createCardOnSubmit();
     ToDoCard.createAllTaskCards();
     ToDoCard.createTodayTaskCards();
     ToDoCard.createUpcomingTaskCards();
+    ToDoCard.createCardOnPageLoad();
   }
 }
-
-UI.toggleModal();
-UI.resetModal();
-UI.createTaskObject();
-UI.createToDoCard();

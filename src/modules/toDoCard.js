@@ -21,6 +21,8 @@ export default class ToDoCard {
 
   // Create task object with 'createCardInnerHTML' function
   static createTaskCard = () => {
+    if (!Storage.getTaskArray()) return;
+
     const taskDisplayArea = document.getElementById('task-display-area');
     taskDisplayArea.textContent = '';
     Storage.getTaskArray().forEach((task) =>
@@ -28,17 +30,26 @@ export default class ToDoCard {
     );
   };
 
-  // Create ToDoCards when navbar is clicked,
-  // then add those cards into task display area
-  static createAllTaskCards() {
-    if (!Storage.getTaskArray || Storage.getTaskArray() === null) return;
+  //Create task card on first load/refresh
+  static createCardOnPageLoad = () => {
+    this.createTaskCard();
+  };
 
+  // Create task card on form submit
+  static createCardOnSubmit() {
+    const modalInputForm = document.getElementById('form');
+    modalInputForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      this.createTaskCard();
+    });
+  }
+
+  // Create ToDoCards when navbar is clicked,
+  // then append those cards on task display area
+  static createAllTaskCards() {
     const taskDisplayArea = document.getElementById('task-display-area');
     const selectionAllTasks = document.getElementById('all-tasks');
     taskDisplayArea.textContent = '';
-
-    // Create task cards, then append it on main display area on first page load
-    this.createTaskCard();
 
     // Create all task objects when all tasks button is clicked
     selectionAllTasks.addEventListener('click', (e) => {
@@ -47,7 +58,7 @@ export default class ToDoCard {
       mainTitle.textContent = 'All Tasks';
       taskDisplayArea.textContent = '';
 
-      Storage.getTaskArray().forEach(() => this.createTaskCard());
+      this.createTaskCard();
     });
   }
 
@@ -93,7 +104,8 @@ export default class ToDoCard {
 
         if (
           taskDeadline[1] === todayFullDate[1] &&
-          taskDeadline[2] - todayFullDate[2] <= 7
+          taskDeadline[2] - todayFullDate[2] <= 7 &&
+          taskDeadline[2] - todayFullDate[2] > 0
         )
           this.createCardInnerHTML(task.title, task.description, task.deadline);
       });
