@@ -1,19 +1,24 @@
+import Task from './task';
+
 export default class Storage {
   constructor() {
-    this.tasks = [];
+    this.tasks;
   }
 
   // Push newly created task objects into empty array,
   // then localStore the array for later uses
-  static storeTaskObject(object) {
-    const arr = this.getTaskArray();
-    this.tasks = arr;
-    this.tasks.push(object);
-    localStorage.setItem('taskArray', JSON.stringify(this.tasks));
+  static storeTaskObject() {
+    const modalInputForm = document.getElementById('form');
+
+    modalInputForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      this.tasks = this.getTaskArray();
+      this.tasks.push(Task.createTaskObject());
+      localStorage.setItem('taskArray', JSON.stringify(this.tasks));
+    });
   }
 
   // Get local storage if it's null, then return empty array instead
-  static getTaskArray() {
-    return JSON.parse(localStorage.getItem('taskArray')) || [];
-  }
+  static getTaskArray = () =>
+    JSON.parse(localStorage.getItem('taskArray')) || [];
 }

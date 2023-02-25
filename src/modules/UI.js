@@ -4,18 +4,12 @@ import ToDoCard from './toDoCard';
 
 export default class UI {
   // Toggle modal on/off when add button is clicked
-  static toggleModal() {
+  static toggleModalOn() {
     const modal = document.getElementById('modal');
     const btnAddTask = document.getElementById('add-new-task-group');
     const modalInputForm = document.getElementById('form');
     const header = document.getElementById('header');
     const main = document.querySelector('main');
-
-    function hideModal() {
-      modal.style.display = 'none';
-      header.style.filter = 'blur(0px)';
-      main.style.filter = 'blur(0px)';
-    }
 
     // On
     btnAddTask.addEventListener('click', () => {
@@ -24,37 +18,29 @@ export default class UI {
       main.style.filter = 'blur(1px)';
     });
 
-    // Various modal off scenarios
+    // Modal off scenarios
     modalInputForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      hideModal();
+      modal.style.display = 'none';
+      header.style.filter = 'blur(0px)';
+      main.style.filter = 'blur(0px)';
     });
-    // When mouseover on header
-    header.addEventListener('mouseover', () => hideModal());
 
     // When keydown===esc key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') hideModal();
+      if (e.key === 'Escape') modal.style.display = 'none';
+      header.style.filter = 'blur(0px)';
+      main.style.filter = 'blur(0px)';
     });
   }
 
   // Reset modal input
-  static resetModal() {
+  static resetModalForm() {
     const modalInputForm = document.getElementById('form');
     const btnAddTask = document.getElementById('add-new-task-group');
 
     btnAddTask.addEventListener('click', () => {
       modalInputForm.reset();
-    });
-  }
-
-  // Create new task object, then store it in array
-  static createTaskObject() {
-    const modalInputForm = document.getElementById('form');
-
-    modalInputForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      Storage.storeTaskObject(Task.createTaskObject());
     });
   }
 
