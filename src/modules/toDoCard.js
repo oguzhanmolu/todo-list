@@ -13,9 +13,10 @@ export default class ToDoCard {
       <span class="card-item card-title">Title: ${title}</span>
       <span class="card-item card-description">Description: ${description}</span>
       <span class="card-item card-deadline">Deadline:
-       ${deadline.split('-').reverse().join('/')}</span>
+       ${deadline.split('-').reverse().join('/')}${
+      Task.isExpired(deadline) ? '(Expired)' : ''
+    }</span>
       </div>`;
-
     taskDisplayArea.appendChild(card);
   }
 

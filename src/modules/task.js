@@ -24,4 +24,13 @@ export default class Task {
       today < 10 ? '0' + today : today
     }`;
   }
+
+  // Check if deadline is expired
+  static isExpired(deadline) {
+    const taskDeadline = deadline.split('-');
+    const todayFullDate = this.getFullDate().split('-');
+    return (
+      taskDeadline[1] <= todayFullDate[1] && taskDeadline[2] < todayFullDate[2]
+    );
+  }
 }
