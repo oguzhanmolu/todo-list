@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-style: none;
 }
 
 body {
@@ -19,7 +20,7 @@ header {
   flex-direction: column;
   height: 100vh;
   width: 20vw;
-  gap: 50px;
+  gap: 75px;
   background-color: var(--main-color);
 }
 
@@ -27,20 +28,14 @@ header {
   margin-top: 25px;
   font-size: 3rem;
   color: white;
-  background-color: transparent;
 }
 
 #nav-title-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 #nav-main-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 nav {
@@ -57,7 +52,7 @@ nav > * {
   font-size: 1.75rem;
   transition: all ease-in-out 0.25s;
 }
-nav > * > * {
+.icon {
   margin-left: 10px;
 }
 
@@ -127,7 +122,6 @@ textarea {
 #submit-button {
   margin: auto;
   padding: 10px;
-  border-style: none;
   font-size: 1.25rem;
   transition: all ease-in-out 0.25s;
 }
@@ -138,13 +132,12 @@ textarea {
   flex-direction: column;
   justify-content: space-between;
   height: 300px;
-  background-color: rgba(56, 144, 206, 0.95);
+  background-color: rgba(56, 144, 206, 0.9);
   color: white;
   text-align: center;
 }
 
 .card-item {
-  display: block;
   margin-top: 25px;
   font-size: 1.5rem;
   word-wrap: break-word;
@@ -157,7 +150,6 @@ textarea {
   padding: 10px;
   background-color: red;
   color: white;
-  border-style: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -165,7 +157,7 @@ textarea {
 /* Logo, hover, icons etc. */
 .fa-solid,
 .fa-regular {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .main-title-icon,
