@@ -1,5 +1,4 @@
 import ToDoCard from './toDoCard';
-
 export default class UI {
   // Toggle modal on/off
   static toggleModal() {
@@ -51,10 +50,10 @@ export default class UI {
 
   // Create toDoCards from task objects
   static createToDoCard() {
+    ToDoCard.createCardOnPageLoad();
     ToDoCard.createCardOnSubmit();
     ToDoCard.createAllTaskCards();
     ToDoCard.createTodayTaskCards();
     ToDoCard.createUpcomingTaskCards();
-    ToDoCard.createCardOnPageLoad();
   }
 }

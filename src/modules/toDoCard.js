@@ -10,14 +10,13 @@ export default class ToDoCard {
 
     card.innerHTML = `
     <div id="card">
-      <i class="card-icon fa-sharp fa-solid fa-check-double"></i>
       <span class="card-item card-title">Title: ${title}</span>
       <span class="card-item card-description">Description: ${description}</span>
       <span class="card-item card-deadline">Deadline:
        ${deadline.split('-').reverse().join('/')}${
       Task.isExpired(deadline) ? ' (Expired)' : ''
     }</span>
-    <button class='card-button'>DELETE</button>
+    <button class='card-button-delete'>DELETE</button>
       </div>`;
 
     taskDisplayArea.appendChild(card);
@@ -27,7 +26,7 @@ export default class ToDoCard {
   static createTaskCard() {
     this.clearTaskDisplayArea();
 
-    if (!Storage.getTaskArray()) return;
+    if (!Storage.getTaskArray() || Storage.getTaskArray().length > 12) return;
 
     Storage.getTaskArray().forEach((task) =>
       this.createCardInnerHTML(task.title, task.description, task.deadline)
@@ -54,8 +53,8 @@ export default class ToDoCard {
     const modalInputForm = document.getElementById('form');
 
     modalInputForm.addEventListener('submit', (e) => {
-      this.setMainTitle('All Tasks');
       e.preventDefault();
+      this.setMainTitle('All Tasks');
       this.createTaskCard();
     });
   }
@@ -89,10 +88,10 @@ export default class ToDoCard {
 
   // Create next 7 days(roughly) ToDoCards when 'Upcoming' from navbar is clicked.
   static createUpcomingTaskCards() {
-    const selectionUpcomingTasks = document.getElementById('upcoming-tasks');
+    const navButtonUpcomingTasks = document.getElementById('upcoming-tasks');
 
     // Events when upcoming tasks button is clicked.
-    selectionUpcomingTasks.addEventListener('click', () => {
+    navButtonUpcomingTasks.addEventListener('click', () => {
       this.clearTaskDisplayArea();
       this.setMainTitle('Upcoming Tasks');
 

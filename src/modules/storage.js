@@ -1,4 +1,5 @@
 import Task from './task';
+
 export default class Storage {
   constructor() {
     this.tasks;
@@ -13,6 +14,25 @@ export default class Storage {
       this.tasks = this.getTaskArray();
       this.tasks.push(Task.createTaskObject());
       localStorage.setItem('taskArray', JSON.stringify(this.tasks));
+    });
+  }
+
+  // Delete task object whenever delete button is clicked. (kinda cheezy)
+  static deleteTaskObject() {
+    window.addEventListener('click', (e) => {
+      if (e.target.textContent === 'DELETE') {
+        const cardDescription =
+          e.target.parentNode.children[1].innerHTML.split(' ')[1];
+        localStorage.setItem(
+          'taskArray',
+          JSON.stringify(
+            this.getTaskArray().filter(
+              (object) => object.description !== cardDescription
+            )
+          )
+        );
+        window.location.reload();
+      }
     });
   }
 
