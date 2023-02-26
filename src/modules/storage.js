@@ -1,12 +1,10 @@
 import Task from './task';
-
 export default class Storage {
   constructor() {
     this.tasks;
   }
-
-  // Push newly created task objects into empty array,
-  // then localStore the array for later uses
+  // Push new task objects in array,
+  // then set a new localStorage.
   static storeTaskObject() {
     const modalInputForm = document.getElementById('form');
 
@@ -18,7 +16,7 @@ export default class Storage {
     });
   }
 
-  // Get local storage if it's null, then return empty array instead
+  // Get local storage. If it's null, then return an empty array instead.
   static getTaskArray = () =>
     JSON.parse(localStorage.getItem('taskArray')) || [];
 }

@@ -1,10 +1,8 @@
-import Task from './task';
-import Storage from './storage';
 import ToDoCard from './toDoCard';
 
 export default class UI {
-  // Toggle modal on/off when add button is clicked
-  static toggleModalOn() {
+  // Toggle modal on/off
+  static toggleModal() {
     const modal = document.getElementById('modal');
     const btnAddTask = document.getElementById('add-new-task-group');
     const modalInputForm = document.getElementById('form');
@@ -18,7 +16,7 @@ export default class UI {
       main.style.filter = 'blur(1px)';
     });
 
-    // Modal off scenarios
+    // Toggle off on submit
     modalInputForm.addEventListener('submit', (e) => {
       e.preventDefault();
       modal.style.display = 'none';
@@ -26,21 +24,28 @@ export default class UI {
       main.style.filter = 'blur(0px)';
     });
 
-    // When keydown===esc key
+    //  Toggle off when keydown==='Escape'
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.style.display = 'none';
-      header.style.filter = 'blur(0px)';
-      main.style.filter = 'blur(0px)';
+      if (e.key === 'Escape') {
+        modal.style.display = 'none';
+        header.style.filter = 'blur(0px)';
+        main.style.filter = 'blur(0px)';
+      }
     });
   }
 
   // Reset modal input
   static resetModalForm() {
     const modalInputForm = document.getElementById('form');
-    const btnAddTask = document.getElementById('add-new-task-group');
 
-    btnAddTask.addEventListener('click', () => {
+    // On submit
+    modalInputForm.addEventListener('submit', () => {
       modalInputForm.reset();
+    });
+
+    // When esc is pressed
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modalInputForm.reset();
     });
   }
 

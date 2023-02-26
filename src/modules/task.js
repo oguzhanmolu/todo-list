@@ -5,9 +5,8 @@ export default class Task {
     this.deadline = deadline;
   }
 
-  // Create a new object with form input values
+  // Create a new task object from input values.
   static createTaskObject() {
-    // Input values
     const modalInputTitle = document.getElementById('input-title').value;
     const modalInputDescription =
       document.getElementById('input-description').value;
@@ -16,7 +15,7 @@ export default class Task {
     return new Task(modalInputTitle, modalInputDescription, modalInputDate);
   }
 
-  // Get today's fullDate in same format as 'task.deadline' (day-month-year)
+  // Get today's fullDate in same format as 'task.deadline' (day-month-year).
   static getFullDate() {
     const fullDate = new Date();
     const today = new Date().getDate();
@@ -25,7 +24,7 @@ export default class Task {
     }`;
   }
 
-  // Check if deadline is expired
+  // Return true if task deadline is expired. ([index]is year-month-day values)
   static isExpired(deadline) {
     const taskDeadline = deadline.split('-');
     const todayFullDate = this.getFullDate().split('-');
