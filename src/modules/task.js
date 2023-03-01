@@ -29,7 +29,9 @@ export default class Task {
     const taskDeadline = deadline.split('-');
     const todayFullDate = this.getFullDate().split('-');
     return (
-      taskDeadline[1] <= todayFullDate[1] && taskDeadline[2] < todayFullDate[2]
+      taskDeadline[1] < todayFullDate[1] ||
+      (taskDeadline[1] === todayFullDate[1] &&
+        taskDeadline[2] < todayFullDate[2])
     );
   }
 }
